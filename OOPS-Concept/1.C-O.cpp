@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string>
 using namespace std;
 
 class Teacher{
@@ -27,3 +28,4 @@ int main(){
     cout << t1.subject << endl;
     return 0;
 }
+
