@@ -4,7 +4,7 @@ using namespace std;
 
 // Single Inheritance:
 
-class Person{
+class Person{ // Parents Class, Base Class
     public:
     string name;
     int age;
@@ -14,7 +14,7 @@ class Person{
     }
 };
 
-class Student : public Person{
+class Student : public Person{ // Child Class, Derived Class
     public:
     int roll_no;
 
