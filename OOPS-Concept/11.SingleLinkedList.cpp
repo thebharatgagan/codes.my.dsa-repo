@@ -44,6 +44,43 @@ class SLList{
         tail = newNode;
     }
 
+    /// Pop Front --> Remove the value from the head.
+
+    void removetohead(){
+        if(head == NULL){
+            cout << "List is Empty" << endl;
+            return;
+        }
+
+        Node* temp = head;
+        head = head->next;
+
+        if(head == NULL){
+            tail = NULL;
+        }
+
+        delete temp;
+    }
+
+    /// Pop Back --> Remove the value from the tail;
+
+    void removefromtail(){
+    if(head == tail){
+        delete head;
+        head = tail = NULL;
+        return;
+    }
+
+    Node* temp = head;
+    while(temp->next != tail){
+        temp = temp->next;
+    }
+
+    delete tail;
+    tail = temp;
+    tail->next = NULL;
+}
+
     void printLL(){
         Node* temp = head;
         while(temp != NULL){
@@ -58,11 +95,18 @@ class SLList{
 int main(){
 
     SLList ll;
+
+    /// Push in FRONT.
     ll.addtohead(7);
     ll.addtohead(8);
 
+    /// Push in BACK.
     ll.addtotail(10);
     ll.addtotail(12);
+
+    ll.removetohead();
+
+    ll.removefromtail();
 
     ll.printLL();
     return 0;
